@@ -1,0 +1,32 @@
+#1.应用环境 启动指定环境
+#公共配置 可以把三个配置都有的写到这里
+spring:
+  profiles:
+    active: pro
+---
+#2.设置环境
+#3.1.生产环境
+spring:
+  profiles: pro
+#生产环境具体参数设定
+server:
+  port: 80
+
+---
+#开发环境
+#和其他没有区别 前面的过时了而已
+spring:
+  config:
+    activate:
+      on-profile: test
+#开发环境具体参数设定
+server:
+  port: 81
+
+---
+#测试环境
+spring:
+  profiles: test
+#测试环境具体参数设定
+server:
+  port: 82

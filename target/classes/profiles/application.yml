@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  #链接数据库:
+  datasource:
+    username: root
+    password: 159357
+    url: jdbc:mysql:///heima?characterEncoding=utf8&useSSL=true&createDatabaseIfNotExist=true&serverTimezone=GMT&nullNamePatternMatchesAll=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  devtools:
+    restart:
+      enabled: false  #设置开启热部署
+  output:
+    ansi:
+      enabled: always # 开启日志输出支持颜色显示
+
+#整合mybatis
+mybatis:
+  #起别名
+  type-aliases-package: com.lening.entity
+  #mybaits映射
+  mapper-locations: classpath:mapper/*.xml
+#mybatis标准日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

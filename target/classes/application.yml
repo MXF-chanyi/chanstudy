@@ -1,0 +1,21 @@
+#单一文件的格式
+#spring:
+##  profiles:
+##    active: dev
+##    include: devMvc,devDB
+
+#spring:
+#  profiles:
+#    active: pro
+#    group:
+#    "dev":devMvc,devDB
+#    "pro":proMvc,proDB
+
+logging:
+  logback:
+    rollingpolicy:
+      #文件大小 超过他就新建一个文件
+      max-file-size: 4KB
+      #设置文件名
+      #server.2020-01-01.0.log
+      file-name-pattern: service.%d{yyyy-MM-dd}.%i.log

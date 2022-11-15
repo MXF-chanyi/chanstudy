@@ -1,0 +1,17 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /
+logging:
+  logback:
+    rollingpolicy:
+      #文件大小 超过他就新建一个文件
+      max-file-size: 4KB
+      #设置文件名
+      #server.2020-01-01.0.log
+      file-name-pattern: service.%d{yyyy-MM-dd}.%i.log
+spring:
+  devtools:
+    restart:
+      #设置不参与热部署的文件或文件夹
+      exclude: staric/**,public/**,config/appcliation.yml
